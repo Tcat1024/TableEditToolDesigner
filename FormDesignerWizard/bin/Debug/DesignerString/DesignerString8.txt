@@ -1,0 +1,37 @@
+﻿            ((System.ComponentModel.ISupportInitialize)(this.MainTabControl)).EndInit();
+            this.MainTabControl.ResumeLayout(false);
+            this.ListTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).EndInit();
+            this.DetailTabPage.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevExpress.XtraBars.BarManager MainBarManager;
+        private DevExpress.XtraBars.Bar TopBar;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem AddButton;
+        private DevExpress.XtraBars.BarButtonItem AddAsButton;
+        private DevExpress.XtraBars.BarButtonItem DeleteButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshButton;
+        private DevExpress.XtraBars.BarButtonItem UndoButton;
+        private DevExpress.XtraBars.BarButtonItem SaveButton;
+        private DevExpress.XtraBars.BarButtonItem PrintButton;
+        private DevExpress.XtraBars.BarButtonItem CanceButton;
+        private DevExpress.XtraBars.BarButtonItem ExportButton;
+        private DevExpress.XtraBars.BarButtonItem FilterButton;
+        private DevExpress.XtraTab.XtraTabControl MainTabControl;
+        private DevExpress.XtraTab.XtraTabPage ListTabPage;
+        private DevExpress.XtraTab.XtraTabPage DetailTabPage;
+        private DevExpress.XtraGrid.GridControl MainGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView MainGridView;
+        private DevExpress.XtraLayout.LayoutControl MainLayoutControl;
+        private DevExpress.XtraLayout.LayoutControlGroup MainLayoutControlGroup;
+        private DevExpress.XtraEditors.DataNavigator MainDataNavigator;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel;

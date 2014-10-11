@@ -1,0 +1,28 @@
+﻿            // 
+            // DetailTabPage
+            // 
+            this.DetailTabPage.Controls.Add(this.MainLayoutControl);
+            this.DetailTabPage.Image = ((System.Drawing.Image)(resources.GetObject("DetailTabPage.Image")));
+            this.DetailTabPage.Name = "DetailTabPage";
+            this.DetailTabPage.Size = new System.Drawing.Size(791, 518);
+            this.DetailTabPage.Text = "明细";
+            // 
+            // stctForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.MainDataNavigator);
+            this.Controls.Add(this.MainTabControl);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.MinimumSize = new System.Drawing.Size(697, 530);
+            this.Name = "stctForm";
+            this.Size = new System.Drawing.Size(797, 577);
+            this.Load += new System.EventHandler(this.stctForm_Load);
+            this.SizeChanged += new System.EventHandler(this.stctForm_SizeChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainLayoutControl)).EndInit();
+            this.MainLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MainLayoutControlGroup)).EndInit();

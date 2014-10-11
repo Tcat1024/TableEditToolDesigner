@@ -1,0 +1,72 @@
+﻿            // 
+            // MainDataNavigator
+            // 
+            this.MainDataNavigator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainDataNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.MainDataNavigator.Appearance.Options.UseBackColor = true;
+            this.MainDataNavigator.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.MainDataNavigator.Buttons.Append.Visible = false;
+            this.MainDataNavigator.Buttons.CancelEdit.Visible = false;
+            this.MainDataNavigator.Buttons.EndEdit.Visible = false;
+            this.MainDataNavigator.Buttons.Remove.Visible = false;
+            this.MainDataNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.MainDataNavigator.Location = new System.Drawing.Point(379, 27);
+            this.MainDataNavigator.Name = "MainDataNavigator";
+            this.MainDataNavigator.Size = new System.Drawing.Size(418, 26);
+            this.MainDataNavigator.TabIndex = 20;
+            this.MainDataNavigator.Text = "dataNavigator1";
+            this.MainDataNavigator.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            this.MainDataNavigator.TextStringFormat = "第 {0} / {1}条";
+            // 
+            // MainTabControl
+            // 
+            this.MainTabControl.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.MainTabControl.Appearance.Options.UseBackColor = true;
+            this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTabControl.Location = new System.Drawing.Point(0, 27);
+            this.MainTabControl.LookAndFeel.SkinName = "Office 2013";
+            this.MainTabControl.Name = "MainTabControl";
+            this.MainTabControl.SelectedTabPage = this.ListTabPage;
+            this.MainTabControl.Size = new System.Drawing.Size(797, 550);
+            this.MainTabControl.TabIndex = 15;
+            this.MainTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.ListTabPage,
+            this.DetailTabPage});
+            this.MainTabControl.TabPageWidth = 80;
+            this.MainTabControl.SelectedPageChanging += new DevExpress.XtraTab.TabPageChangingEventHandler(this.MainTabControl_SelectedPageChanging);
+            // 
+            // ListTabPage
+            // 
+            this.ListTabPage.Controls.Add(this.progressPanel);
+            this.ListTabPage.Controls.Add(this.MainGridControl);
+            this.ListTabPage.Image = ((System.Drawing.Image)(resources.GetObject("ListTabPage.Image")));
+            this.ListTabPage.Name = "ListTabPage";
+            this.ListTabPage.Size = new System.Drawing.Size(791, 518);
+            this.ListTabPage.Text = "列表";
+            // 
+            // progressPanel
+            // 
+            this.progressPanel.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.progressPanel.Appearance.Options.UseBackColor = true;
+            this.progressPanel.AppearanceCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.progressPanel.AppearanceCaption.Options.UseFont = true;
+            this.progressPanel.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.progressPanel.AppearanceDescription.Options.UseFont = true;
+            this.progressPanel.Location = new System.Drawing.Point(272, 226);
+            this.progressPanel.Name = "progressPanel";
+            this.progressPanel.Size = new System.Drawing.Size(246, 66);
+            this.progressPanel.TabIndex = 1;
+            this.progressPanel.Text = "progressPanel";
+            // 
+            // MainGridControl
+            // 
+            this.MainGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainGridControl.Location = new System.Drawing.Point(0, 0);
+            this.MainGridControl.LookAndFeel.SkinName = "Office 2013";
+            this.MainGridControl.MainView = this.MainGridView;
+            this.MainGridControl.MenuManager = this.MainBarManager;
+            this.MainGridControl.Name = "MainGridControl";
+            this.MainGridControl.Size = new System.Drawing.Size(791, 518);
+            this.MainGridControl.TabIndex = 0;
+            this.MainGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.MainGridView});

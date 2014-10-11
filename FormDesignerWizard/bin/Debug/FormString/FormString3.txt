@@ -1,0 +1,321 @@
+﻿        private void stctForm_Load(object sender, EventArgs e)
+        {
+            InitControls();
+            InitColumn();
+            this.FilterButton.Enabled = false;
+            this.getData.DoWork += (object DWsender, DoWorkEventArgs DWe) => { InitMyData(); };
+            this.getData.RunWorkerCompleted += (object RWsender, RunWorkerCompletedEventArgs RWe) => { dataBind(); InitEditItem(); this.DetailTabPage.PageVisible = true; this.progressPanel.Visible = false; this.TopBar.Visible = true; };
+            this.initFilter.DoWork += (object DWsender, DoWorkEventArgs DWe) => { myFilterform = new FilterForm(filterColumns, TableName, conn); };
+            this.initFilter.RunWorkerCompleted += (object RWsender, RunWorkerCompletedEventArgs RWe) => { this.FilterButton.Enabled = true; };
+            InitData();
+            this.initFilter.RunWorkerAsync();
+        }
+        private void InitData()
+        {
+            this.DetailTabPage.PageVisible = false;
+            this.progressPanel.Visible = true;
+            this.TopBar.Visible = false;
+            this.getData.RunWorkerAsync();
+        }
+        private void InitMyData()
+        {
+            myData = ServiceContainer.GetService<STCTIService>().ST_Select(TableName, Columns, conn, filterString);
+        }
+        private void stctForm_SizeChanged(object sender, EventArgs e)
+        {
+            this.progressPanel.Location = new Point((this.Width - this.progressPanel.Width) / 2, (this.Height - this.progressPanel.Height) / 2);
+        }
+        //绑定datagridview的数据
+        private void dataBind()
+        {
+            myBind.DataSource = myData;
+            this.MainGridControl.DataSource = null;
+            this.MainGridControl.DataSource = myBind;
+            this.MainDataNavigator.DataSource = myBind;
+        }
+        private void AddButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Check())
+                return;
+            MainGridView.AddNewRow();
+            MainTabControl.SelectedTabPage = DetailTabPage;
+            MainLayoutControl.Focus();
+            this.mod = EditMod.add;
+            this.SetDefaultText();
+            this.NewColumnSetInfo();
+        }
+
+        private void DeleteButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Check())
+                return;
+            if (this.MainGridView.GetFocusedDataRow() == null)
+            {
+                MessageBox.Show("未选中行");
+                return;
+            }
+            MainTabControl.SelectedTabPage = ListTabPage;
+            DialogResult MsgBoxResult = MessageBox.Show("确认删除该记录", "", MessageBoxButtons.YesNo);
+            if (MsgBoxResult == DialogResult.Yes)
+            {
+                MainGridView.DeleteSelectedRows();
+                DataTable deletedTable = myData.GetChanges(DataRowState.Deleted);
+                string Record_text = "";
+                foreach (DataRow delRow in deletedTable.Rows)
+                {
+                    foreach (DataColumn col in deletedTable.Columns)
+                    {
+                        Record_text += string.Format("{0}:{1}\t", col.ToString(), delRow[col, DataRowVersion.Original].ToString());
+                    }
+                }
+                OleDbConnection connection = new OleDbConnection(conn);
+                string str = string.Format("insert into qb_logtable(record_creater,record_create_time,tablename,detail_text) values('{0}','{1}','{2}','{3}')"
+                    , LoginID, EAS.Environment.NowTime.ToString("yyyyMMddHHmmss").ToString(), TableName, Record_text);
+                string result = ServiceContainer.GetService<STCTIService>().ST_LogSave(myData.GetChanges(),str, TableName, Columns, conn,conn, myFilterform.SQLresult);
+                if (result != "")
+                    MessageBox.Show(result);
+                else
+                {
+                    MessageBox.Show("保存完成");
+                    InitData();
+                }
+            }
+
+        }
+
+        private void RefreshButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Check())
+                return;
+            MainTabControl.SelectedTabPage = ListTabPage;
+            InitData();
+        }
+
+        private void UndoButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (this.MainGridView.GetFocusedDataRow() == null)
+            {
+                MessageBox.Show("未选中行");
+                return;
+            }
+            this.MainGridView.GetFocusedDataRow().RejectChanges();
+            this.myBind.CancelEdit();
+            if (this.mod != EditMod.update)
+            {
+                MainTabControl.SelectedTabPage = ListTabPage;
+                this.mod = EditMod.update;
+            }
+        }
+
+        private void CanceButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Check())
+                return;
+            this.myData.RejectChanges();
+        }
+
+	private void SaveButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Check())
+                return;
+            string result = "";
+            DataTable change = myData.GetChanges();
+            if (change != null)
+            {
+                this.EditColumnSetInfo(change);
+                result = ServiceContainer.GetService<STCTIService>().ST_Save(change, TableName, Columns, conn, myFilterform.SQLresult);
+            }
+            if (result != "")
+                MessageBox.Show(result);
+            else
+            {
+                MessageBox.Show("保存完成");
+                InitData();
+            }
+        }
+
+        private void PrintButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DevExpress.XtraPrintingLinks.CompositeLink compositeLink = new DevExpress.XtraPrintingLinks.CompositeLink();
+            DevExpress.XtraPrinting.PrintingSystem ps = new DevExpress.XtraPrinting.PrintingSystem();
+            compositeLink.PrintingSystem = ps;
+            compositeLink.Landscape = true;
+            compositeLink.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            DevExpress.XtraPrinting.PrintableComponentLink link = new DevExpress.XtraPrinting.PrintableComponentLink(ps);
+            ps.PageSettings.Landscape = true;
+            link.Component = this.MainGridControl;
+            compositeLink.Links.Add(link);
+            link.CreateDocument();  //建立文档
+            ps.PreviewFormEx.Show();//进行预览
+        }
+        private void ExportButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!this.Check())
+                return;
+            string strName = "";
+            try
+            {
+                if (MainGridView.RowCount == 0)
+                {
+                    MessageBox.Show("Grid表格中没有数据，不能导出为Excel");
+                    return;
+                }
+                DateTime MMSDate = DateTime.Now;
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "Excel 工作簿(*.xlsx)|*.xlsx|Excel 97-2003 工作簿(*.xls)|*.xls|PDF(*.pdf)|*.pdf|Unicode 文本(*.txt)|*.txt";
+                    saveFileDialog.FilterIndex = 0;
+                    saveFileDialog.RestoreDirectory = true;
+                    saveFileDialog.CreatePrompt = true;
+                    saveFileDialog.Title = "导出文件保存路径";
+                    //默认的文件名
+                    saveFileDialog.FileName = MoudleName + " - " + MMSDate.ToString("yyyyMMdd");
+                    //saveFileDialog.ShowDialog();
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        DevExpress.XtraPrinting.PrintingSystem ps = new DevExpress.XtraPrinting.PrintingSystem();
+                        strName = saveFileDialog.FileName;
+                        if (strName.LastIndexOf(".") - strName.LastIndexOf("\\") != 0)
+                        {
+                            switch(saveFileDialog.FilterIndex)
+                            {
+                                case 1: 
+                                    DevExpress.XtraPrinting.XlsxExportOptions xlsx = ps.ExportOptions.Xlsx;
+                                    xlsx.ShowGridLines = true; 
+                                    MainGridView.ExportToXlsx(strName); break;
+                                case 2: 
+                                    DevExpress.XtraPrinting.XlsExportOptions xls = ps.ExportOptions.Xls;
+                                    xls.ShowGridLines = true;
+                                    MainGridView.ExportToXls(strName); break;
+                                case 3: 
+                                    MainGridView.ExportToPdf(strName); break;
+                                case 4: 
+                                    MainGridView.ExportToText(strName); break;
+                            }
+                            MessageBox.Show("导出成功", MoudleName);
+                        }
+                        else
+                        {
+                            MessageBox.Show("保存的名称不能为空");
+                        }
+
+                    }
+                }
+            }
+            catch (System.Exception msg)
+            {
+                MessageBox.Show(msg.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+        private void FilterButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            myFilterform.ShowDialog();
+            if (myFilterform.DialogResult == DialogResult.Yes)
+            {
+                filterString = myFilterform.SQLresult;
+                InitData();
+            }
+        }
+        private void AddAsButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Check())
+                return;
+            if (this.MainGridView.GetFocusedDataRow() == null)
+            {
+                MessageBox.Show("未选中行");
+                return;
+            }
+            currentRow = this.MainGridView.GetFocusedDataRow();
+            MainGridView.AddNewRow();
+            this.MainTabControl.SelectedTabPage = DetailTabPage;
+            this.SetEditText();
+            this.NewColumnSetInfo();
+            MainLayoutControl.Focus();
+            this.mod = EditMod.copy;
+        }
+        private void gridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hInfo = MainGridView.CalcHitInfo(new Point(e.X, e.Y));
+            if (e.Button == MouseButtons.Left && e.Clicks == 2)
+            {
+                //判断光标是否在行范围内 
+                if (hInfo.InRow)
+                {
+                    this.MainTabControl.SelectedTabPage = DetailTabPage;
+                }
+            }
+        }
+
+        private void gridView1_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
+        {
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.ThrowException;
+        }
+
+        private void MainTabControl_SelectedPageChanging(object sender, DevExpress.XtraTab.TabPageChangingEventArgs e)
+        {
+            if(e.Page==this.ListTabPage)
+                if (!this.Check())
+                    e.Cancel = true;
+        }
+        private bool Check()
+        {
+            try
+            {
+                this.MainGridView.UpdateCurrentRow();
+                this.mod = EditMod.update;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                if (this.mod == EditMod.update)
+                    this.myBind.CancelEdit();
+                else if(this.mod==EditMod.copy)
+                    SetEditText();
+                MessageBox.Show(this, ex.Message);
+                return false;
+            }
+        }
+        private void InitEditItem()
+        {
+            if (editNeedInit)
+            {
+                ColumnInfo tempColumn;
+                DataBaseEditPro tempEdit;
+                foreach (var editItem in editItems)
+                {
+                    tempColumn = (editItem.Tag as ColumnInfo);
+                    tempEdit = (editItem.Control as DataBaseEditPro);
+                    tempEdit.SetSource(tempColumn.value_Original, tempColumn.value_Show);
+                    tempEdit.SetNewBind("Text", myBind, tempColumn.column, false, DataSourceUpdateMode.OnValidation);
+                }
+                editNeedInit = false;
+            }
+        }
+        private void SetDefaultText()
+        {
+            foreach (var temp in editItems)
+            {
+                (temp.Control as DataBaseEditPro).SetDefalut();
+            }
+        }
+        private void NewColumnSetInfo()
+        {
+            (myBind.Current as DataRow)[infoColumns[0].column] = EAS.Environment.NowTime.ToString("yyyyMMddHHmmss");
+            (myBind.Current as DataRow)[infoColumns[1].column] = LoginID;
+        }
+        private void EditColumnSetInfo(DataTable ds)
+        {
+            foreach (DataRow dr in ds.Rows)
+            {
+                if (dr.RowState == DataRowState.Modified)
+                {
+                    dr[infoColumns[2].column] = EAS.Environment.NowTime.ToString("yyyyMMddHHmmss");
+                    dr[infoColumns[3].column] = LoginID;
+                }
+            }
+
+        }

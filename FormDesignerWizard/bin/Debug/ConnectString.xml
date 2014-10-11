@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document>
+  <con>
+    <ConnString type="test">Provider = MSDAORA; Data Source = orcl; User ID = Tcat; Password = mao19911024;</ConnString>
+  </con>
+  <InfoColumn>
+    <CreateTimes>
+      <CreateTime></CreateTime>
+    </CreateTimes>
+    <CreatePersons></CreatePersons>
+    <AlterTimes></AlterTimes>
+    <AlterPersons></AlterPersons>
+  </InfoColumn>
+</document>

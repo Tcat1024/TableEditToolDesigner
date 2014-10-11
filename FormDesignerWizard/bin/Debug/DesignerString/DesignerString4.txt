@@ -1,0 +1,5 @@
+﻿            this.DetailTabPage = new DevExpress.XtraTab.XtraTabPage();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainLayoutControl)).BeginInit();
+            this.MainLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainLayoutControlGroup)).BeginInit();

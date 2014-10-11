@@ -1,0 +1,182 @@
+﻿            ((System.ComponentModel.ISupportInitialize)(this.MainTabControl)).BeginInit();
+            this.MainTabControl.SuspendLayout();
+            this.ListTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).BeginInit();
+            this.DetailTabPage.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // MainBarManager
+            // 
+            this.MainBarManager.AllowCustomization = false;
+            this.MainBarManager.AllowQuickCustomization = false;
+            this.MainBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.TopBar});
+            this.MainBarManager.DockControls.Add(this.barDockControlTop);
+            this.MainBarManager.DockControls.Add(this.barDockControlBottom);
+            this.MainBarManager.DockControls.Add(this.barDockControlLeft);
+            this.MainBarManager.DockControls.Add(this.barDockControlRight);
+            this.MainBarManager.Form = this;
+            this.MainBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.AddButton,
+            this.AddAsButton,
+            this.DeleteButton,
+            this.RefreshButton,
+            this.UndoButton,
+            this.SaveButton,
+            this.PrintButton,
+            this.CanceButton,
+            this.ExportButton,
+            this.FilterButton});
+            this.MainBarManager.MainMenu = this.TopBar;
+            this.MainBarManager.MaxItemId = 31;
+            // 
+            // TopBar
+            // 
+            this.TopBar.BarName = "Main menu";
+            this.TopBar.DockCol = 0;
+            this.TopBar.DockRow = 0;
+            this.TopBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.TopBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.AddButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.AddAsButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.DeleteButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.RefreshButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.UndoButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.CanceButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.PrintButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.SaveButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.ExportButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.FilterButton, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.TopBar.OptionsBar.AllowQuickCustomization = false;
+            this.TopBar.OptionsBar.DrawDragBorder = false;
+            this.TopBar.Text = "Main menu";
+            // 
+            // AddButton
+            // 
+            this.AddButton.AllowRightClickInMenu = false;
+            this.AddButton.Caption = "新增";
+            this.AddButton.Glyph = ((System.Drawing.Image)(resources.GetObject("AddButton.Glyph")));
+            this.AddButton.Id = 4;
+            this.AddButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("AddButton.LargeGlyph")));
+            this.AddButton.Name = "AddButton";
+            this.AddButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddButton_ItemClick);
+            //             
+            // AddAsButton
+            // 
+            this.AddAsButton.AllowRightClickInMenu = false;
+            this.AddAsButton.Caption = "新增复制";
+            this.AddAsButton.Glyph = ((System.Drawing.Image)(resources.GetObject("AddAsButton.Glyph")));
+            this.AddAsButton.Id = 5;
+            this.AddAsButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("AddAsButton.LargeGlyph")));
+            this.AddAsButton.Name = "AddAsButton";
+            this.AddAsButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddAsButton_ItemClick);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.AllowRightClickInMenu = false;
+            this.DeleteButton.Caption = "删除";
+            this.DeleteButton.Glyph = ((System.Drawing.Image)(resources.GetObject("DeleteButton.Glyph")));
+            this.DeleteButton.Id = 6;
+            this.DeleteButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("DeleteButton.LargeGlyph")));
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DeleteButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteButton_ItemClick);
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.AllowRightClickInMenu = false;
+            this.RefreshButton.Caption = "刷新";
+            this.RefreshButton.Glyph = ((System.Drawing.Image)(resources.GetObject("RefreshButton.Glyph")));
+            this.RefreshButton.Id = 7;
+            this.RefreshButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("RefreshButton.LargeGlyph")));
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshButton_ItemClick);
+            // 
+            // UndoButton
+            // 
+            this.UndoButton.AllowRightClickInMenu = false;
+            this.UndoButton.Caption = "单条撤销";
+            this.UndoButton.Glyph = ((System.Drawing.Image)(resources.GetObject("UndoButton.Glyph")));
+            this.UndoButton.Id = 8;
+            this.UndoButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("UndoButton.LargeGlyph")));
+            this.UndoButton.Name = "UndoButton";
+            this.UndoButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UndoButton_ItemClick);
+            // 
+            // CanceButton
+            // 
+            this.CanceButton.AllowRightClickInMenu = false;
+            this.CanceButton.Caption = "全部撤销";
+            this.CanceButton.Glyph = ((System.Drawing.Image)(resources.GetObject("CanceButton.Glyph")));
+            this.CanceButton.Id = 12;
+            this.CanceButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("CanceButton.LargeGlyph")));
+            this.CanceButton.Name = "CanceButton";
+            this.CanceButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.CanceButton_ItemClick);
+            // 
+            // PrintButton
+            // 
+            this.PrintButton.AllowRightClickInMenu = false;
+            this.PrintButton.Caption = "打印";
+            this.PrintButton.Glyph = ((System.Drawing.Image)(resources.GetObject("PrintButton.Glyph")));
+            this.PrintButton.Id = 11;
+            this.PrintButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("PrintButton.LargeGlyph")));
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PrintButton_ItemClick);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.AllowRightClickInMenu = false;
+            this.SaveButton.Caption = "保存";
+            this.SaveButton.Glyph = ((System.Drawing.Image)(resources.GetObject("SaveButton.Glyph")));
+            this.SaveButton.Id = 10;
+            this.SaveButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("SaveButton.LargeGlyph")));
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SaveButton_ItemClick);
+            // 
+            // ExportButton
+            // 
+            this.ExportButton.AllowRightClickInMenu = false;
+            this.ExportButton.Caption = "导出";
+            this.ExportButton.Glyph = ((System.Drawing.Image)(resources.GetObject("ExportButton.Glyph")));
+            this.ExportButton.Id = 25;
+            this.ExportButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("ExportButton.LargeGlyph")));
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ExportButton_ItemClick);
+            // 
+            // FilterButton
+            // 
+            this.FilterButton.AllowRightClickInMenu = false;
+            this.FilterButton.Caption = "筛选";
+            this.FilterButton.Glyph = ((System.Drawing.Image)(resources.GetObject("FilterButton.Glyph")));
+            this.FilterButton.Id = 29;
+            this.FilterButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("FilterButton.LargeGlyph")));
+            this.FilterButton.Name = "FilterButton";
+            this.FilterButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FilterButton_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(797, 27);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 577);
+            this.barDockControlBottom.Size = new System.Drawing.Size(797, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 550);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(797, 27);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 550);

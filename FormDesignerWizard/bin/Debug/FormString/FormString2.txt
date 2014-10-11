@@ -1,0 +1,16 @@
+﻿        ColumnInfo[] myColumns = new ColumnInfo[ColumnCount];
+        ColumnInfo[] filterColumns = new ColumnInfo[FilterColumnCount];
+	ColumnInfo[] infoColumns = new ColumnInfo[4];
+        LayoutControlItem[] editItems = new LayoutControlItem[EditColumnCount];
+        DataTable myData = new DataTable();
+        List<BaseEdit> textEdits = new List<BaseEdit>();
+        BindingSource myBind = new BindingSource();
+        private string filterString = "";
+        private enum EditMod { add, update, copy }
+        EditMod mod = EditMod.update;
+        DataRow currentRow;
+        FilterForm myFilterform;
+        private bool editNeedInit = true;
+        private BackgroundWorker getData = new BackgroundWorker();
+        private BackgroundWorker initFilter = new BackgroundWorker();
+        private string LoginID;
