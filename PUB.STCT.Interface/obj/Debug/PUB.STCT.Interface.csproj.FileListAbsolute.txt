@@ -1,0 +1,4 @@
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\PUB.STCT.Interface\bin\Debug\PUB.STCT.Interface.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\PUB.STCT.Interface\bin\Debug\PUB.STCT.Interface.pdb
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\PUB.STCT.Interface\obj\Debug\PUB.STCT.Interface.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\PUB.STCT.Interface\obj\Debug\PUB.STCT.Interface.pdb

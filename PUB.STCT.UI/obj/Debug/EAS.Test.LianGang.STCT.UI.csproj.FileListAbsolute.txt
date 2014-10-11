@@ -1,0 +1,12 @@
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.csprojResolveAssemblyReference.cache
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.DataComboBoxEditPro.resources
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.DataDateEditPro.resources
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.DataTextEditPro.resources
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.FilterForm.resources
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.FilterItem.resources
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.csproj.GenerateResource.Cache
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.dll.licenses
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\Debug\EAS.Test.LianGang.STCT.UI.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\Debug\EAS.Test.LianGang.STCT.UI.pdb
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.UI\obj\Debug\EAS.Test.LianGang.STCT.UI.pdb

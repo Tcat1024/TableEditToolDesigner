@@ -1,0 +1,5 @@
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\Debug\EAS.Test.LianGang.STCT.Server.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\Debug\EAS.Test.LianGang.STCT.Server.pdb
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.Server\obj\Debug\EAS.Test.LianGang.STCT.Server.csprojResolveAssemblyReference.cache
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.Server\obj\Debug\EAS.Test.LianGang.STCT.Server.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\EAS.Test.LianGang.STCT.Server\obj\Debug\EAS.Test.LianGang.STCT.Server.pdb

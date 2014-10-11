@@ -19,3 +19,6 @@ C:\Users\Tcat\Desktop\WorkSpace\Program\FormDesignerWizard\FormDesignerWizard\bi
 C:\Users\Tcat\Desktop\WorkSpace\Program\FormDesignerWizard\FormDesignerWizard\bin\Debug\ICSharpCode.AvalonEdit.dll
 C:\Users\Tcat\Desktop\WorkSpace\Program\FormDesignerWizard\FormDesignerWizard\obj\Debug\FormDesignerWizard.csprojResolveAssemblyReference.cache
 C:\Users\Tcat\Desktop\WorkSpace\Program\FormDesignerWizard\FormDesignerWizard\obj\Debug\FormDesignerWizard.exe.licenses
+C:\Users\Tcat\Desktop\WorkSpace\Program\TableEditToolDesigner\FormDesignerWizard\bin\Debug\FormDesignerWizard.exe.config
+C:\Users\Tcat\Desktop\WorkSpace\Program\TableEditToolDesigner\FormDesignerWizard\obj\Debug\FormDesignerWizard.exe
+C:\Users\Tcat\Desktop\WorkSpace\Program\TableEditToolDesigner\FormDesignerWizard\obj\Debug\FormDesignerWizard.pdb

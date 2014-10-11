@@ -1,0 +1,5 @@
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\Debug\PUB.STCT.Server.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\Debug\PUB.STCT.Server.pdb
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\PUB.STCT.Server\obj\Debug\PUB.STCT.Server.csprojResolveAssemblyReference.cache
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\PUB.STCT.Server\obj\Debug\PUB.STCT.Server.dll
+C:\Users\Tcat\Desktop\WorkSpace\Program\TestProject\src\EAS.Test.LianGang\PUB.STCT.Server\obj\Debug\PUB.STCT.Server.pdb
